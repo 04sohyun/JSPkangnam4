@@ -15,6 +15,7 @@
 <td width="50" valign="top"><jsp:include page="/module/left.jsp" flush="false"/></td>
 <td width="300" valign="top" height="350">
   <!--내용부분 시작:  -->
+  <h1><%=pageTitle %></h1>
   <jsp:include page="<%=contentPage %>" flush="false" />
   <!--내용부분 끝:  -->
 </td>
