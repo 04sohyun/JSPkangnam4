@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$.ajax()사용</title>
+<style>
+div{width:200px; height:80px; margin:3px; float:left;}
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){   //<-$(document).ready(function(){});
+	$('#menu1').click(function(){/* $.ajax({객체}) */
+		$.ajax({
+			url:'menu.html',
+			dataType:'html',/* 응답 데이터 타입 */
+			success:function(data){/* 응답데이터를 매개변수로 받는 콜백함수 */
+				$('#message1').html(data); /* innerHTML="데이터" */ //data안쓰면 get이고 쓰면 set임
+			}
+		});
+	});
+	$('#menu2').click(function(){
+		$.ajax({
+			url:'menu.html',
+			dataType:'html',
+			success:function(data){
+				//alert($(data).find('li'));
+				$('#message2').html($(data).find('li')); 
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div>
+	<a href="#" id="menu1">메뉴보기1</a>
+	<p><span id="message1"></span></p>
+</div>
+<div>
+	<a href="#" id="menu2">메뉴보기2</a>
+	<p><span id="message2"></span></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 특수문자 -->
+<char>
+	<and>YOU &amp; ME</and>
+	<and>YOU &#38; ME</and>
+</char>

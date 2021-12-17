@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+td{border:1px solid gray;}
+</style>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+/* $.post(url,전송데이터,콜백함수(응답데이터){}); */
+$(function(){
+	$('#submit').click(function(){
+		var $username = $('.username').val(); //val(값) <-setValue, val() <-getValue
+		var $sendData = 'username='+$username;
+		/* post방식 전송 */
+		$.post('welcome.jsp',$sendData,function(msg){
+			$('#message').html(msg);  //html()<-getHTML, html(값)<-setHTML
+		});
+	});
+});
+</script><!-- load, getJSON, ajax를 많이 쓴다 함 -->
+</head>
+<body>
+<form>
+	<label>이름을 입력하세요:</label>
+	<input type="text" name="username" class="username"><br>
+	<input type="button" id="submit" value="전송">
+</form>
+<div id="message">
+</div>
+</body>
+</html>

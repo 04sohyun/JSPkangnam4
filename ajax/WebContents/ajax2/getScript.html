@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	$.getScript("../js/test.js");
+	$('#sub').click(function(){
+		var msg = call($('.username').val());
+		$('#message').html(msg);
+	});
+});
+</script>
+</head>
+<body>
+<form>
+	<label>이름을 입력하세요:</label>
+	이름:<input type="text" name="username" class="username"><p>
+	<input type="button" id="sub" value="확인">
+</form>
+<div id="msg"></div>
+</body>
+</html>

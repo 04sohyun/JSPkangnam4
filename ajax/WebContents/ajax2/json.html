@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>$.getJSON()</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script>
+/* $.getJSON() : json타입 데이터를 ajax로 가져올 때 사용 */
+$(function(){
+	$.getJSON('item.json',function(data,status){ //function(응답데이터, 상태값)
+		$('#fruits').append('<tr><th>ID</th><th>이름</th><th>가격</th><th>설명</th></tr>');
+		/* 반복문 $.each(data,function) */
+		$.each(data,function(){/* 배열로 넘어온 데이터 반복 처리 $.each(data,콜백함수) */
+			$('#fruits').append('<tr><td>'+this.id+'</td><td>'+this.name+'</td><td>'
+								+this.price+'</td><td>'+this.description+'</td></tr>');
+		});
+	});
+});
+</script>
+</head>
+<body>
+<h2>과일들</h2>
+<table id="fruits" border="1"></table>
+</body>
+</html>
